@@ -11,11 +11,15 @@ import SDWebImageSwiftUI
 
 struct ListaGenerale: View {
     @Binding var persone : [Persona]
+    @EnvironmentObject var dati : Gestione
     var body: some View {
         VStack {
             List(persone, id: \.id){ persona in
                 NavigationLink(
-                    destination: Text("Destination"),
+                    destination: DettaglioView(persona: persona).environmentObject(dati)
+                        .onAppear{
+                            dati.GetOther(persona: persona)
+                        },
                     label: {
                         HStack{
                             AnimatedImage(url: URL(string: persona.immagine))
@@ -31,6 +35,9 @@ struct ListaGenerale: View {
                                 .fontWeight(.heavy)
                         }
                     })
+//                    .onDisappear{
+//                       
+//                    }
                 
             }
         }
@@ -41,5 +48,6 @@ struct ListaGenerale_Previews: PreviewProvider {
      @State static var pers : [Persona] = []
     static var previews: some View {
         ListaGenerale(persone: $pers)
+            .environmentObject(Gestione())
     }
 }

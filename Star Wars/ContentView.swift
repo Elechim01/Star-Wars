@@ -29,10 +29,10 @@ struct ContentView: View {
                 if seleziona == false{
                 if selezionato == false{
                     //                mostra la lista
-                    ListaGenerale(persone: $dati.persone)
+                    ListaGenerale(persone: $dati.persone).environmentObject(dati)
                 }else{
                     //                mostra la griglia
-                    GrigliaGenerale(persone: $dati.persone)
+                    GrigliaGenerale(persone: $dati.persone).environmentObject(dati)
                 }
                 }
                 //            bottone per lo switch..
@@ -40,11 +40,11 @@ struct ContentView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Star Wars")
-            .navigationBarItems(leading:
+            .navigationBarItems(trailing:
                                     Button(action: {
                                         selezionato.toggle()
                                     }, label: {
-                                        Text("Cambia")
+                                        Image(systemName: selezionato ? "list.triangle" :"circle.grid.2x2.fill" )
                                     })
             )
         }
