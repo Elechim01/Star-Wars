@@ -20,6 +20,8 @@
 		C4A213A1268355F20020A207 /* ListaGenerale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A0268355F20020A207 /* ListaGenerale.swift */; };
 		C4A213A32683574C0020A207 /* GrigliaGenerale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A22683574C0020A207 /* GrigliaGenerale.swift */; };
 		C4A213A52683E4E40020A207 /* DettaglioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A42683E4E40020A207 /* DettaglioView.swift */; };
+		C4B02C6626851EF100D70DF7 /* InformazioniFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C6526851EF100D70DF7 /* InformazioniFilm.swift */; };
+		C4B02C682685287700D70DF7 /* InformazioniVeicoli.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C672685287700D70DF7 /* InformazioniVeicoli.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		C4A213A0268355F20020A207 /* ListaGenerale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaGenerale.swift; sourceTree = "<group>"; };
 		C4A213A22683574C0020A207 /* GrigliaGenerale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrigliaGenerale.swift; sourceTree = "<group>"; };
 		C4A213A42683E4E40020A207 /* DettaglioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioView.swift; sourceTree = "<group>"; };
+		C4B02C6526851EF100D70DF7 /* InformazioniFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformazioniFilm.swift; sourceTree = "<group>"; };
+		C4B02C672685287700D70DF7 /* InformazioniVeicoli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformazioniVeicoli.swift; sourceTree = "<group>"; };
 		DBE2CB2CE15F82327FD2AE82 /* Pods-Star Wars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Wars.release.xcconfig"; path = "Target Support Files/Pods-Star Wars/Pods-Star Wars.release.xcconfig"; sourceTree = "<group>"; };
 		EC174B3808F791879A39DDCF /* Pods-Star Wars-Star WarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Wars-Star WarsUITests.release.xcconfig"; path = "Target Support Files/Pods-Star Wars-Star WarsUITests/Pods-Star Wars-Star WarsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,11 +195,21 @@
 		C4A2139F268355840020A207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4B02C6426851ECB00D70DF7 /* InformazioniView */,
 				C4A213A0268355F20020A207 /* ListaGenerale.swift */,
 				C4A213A22683574C0020A207 /* GrigliaGenerale.swift */,
 				C4A213A42683E4E40020A207 /* DettaglioView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C4B02C6426851ECB00D70DF7 /* InformazioniView */ = {
+			isa = PBXGroup;
+			children = (
+				C4B02C6526851EF100D70DF7 /* InformazioniFilm.swift */,
+				C4B02C672685287700D70DF7 /* InformazioniVeicoli.swift */,
+			);
+			path = InformazioniView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,9 +449,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B02C6626851EF100D70DF7 /* InformazioniFilm.swift in Sources */,
 				C415CACC268290AC00EDA63F /* Model.swift in Sources */,
 				C415CAA226828FBF00EDA63F /* ContentView.swift in Sources */,
 				C4A213A1268355F20020A207 /* ListaGenerale.swift in Sources */,
+				C4B02C682685287700D70DF7 /* InformazioniVeicoli.swift in Sources */,
 				C4A213A32683574C0020A207 /* GrigliaGenerale.swift in Sources */,
 				C4A213A52683E4E40020A207 /* DettaglioView.swift in Sources */,
 				C415CAA026828FBF00EDA63F /* Star_WarsApp.swift in Sources */,

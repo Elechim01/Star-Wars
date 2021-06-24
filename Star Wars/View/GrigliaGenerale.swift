@@ -42,6 +42,7 @@ struct GrigliaGenerale: View {
                                 }
                             })
                             .padding(.top)
+                            .animation(.easeInOut(duration: 2))
                     }
                 }
                 .padding(.horizontal)

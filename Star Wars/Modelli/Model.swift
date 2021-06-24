@@ -11,8 +11,9 @@ import Alamofire
 import SwiftyJSON
 class Gestione: ObservableObject{
     @Published var persone : [Persona] = []
-    @Published var film : [Film] = []
-    @Published var veicoli : [Veicoli] = []
+//
+    @Published var film : [Film] = [Film(titolo: "prova1", anno: "2021-05-21", messaggioApertura: "in una galassia lontana lontana...")]
+    @Published var veicoli : [Veicoli] = [Veicoli(nome: "sottomarino", modello: "e", produttore: "e", costo: "ee", lunghezza: 34, massimaVelocità: 345, equipaggio: 2, passeggeri: 2, capacità: 34, materialiConsumo: "werty", classeVeicolo: "ssss")]
     
     
     func RecuperoValori(){
