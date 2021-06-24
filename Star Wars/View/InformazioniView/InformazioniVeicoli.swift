@@ -57,7 +57,7 @@ struct InformazioniVeicoli: View {
                 Spacer()
             }
         }
-        .frame(width: 270, height: 400)
+//        .frame(width: 270, height: 400)
         //        .background(Color("bginfo"))
         .background(Color("bginfo"))
     }

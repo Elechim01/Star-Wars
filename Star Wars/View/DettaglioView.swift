@@ -60,12 +60,30 @@ struct DettaglioView: View {
             }
             }
             if mostra == true{
-                InformazioniFilm(film: filmv, chiudi: $mostra)
-                  .cornerRadius(30)
+                if UIDevice.current.orientation.isLandscape{
+                    InformazioniFilm(film: filmv, chiudi: $mostra)
+                        .frame(width: 400, height: 270)
+                      .cornerRadius(30)
+                }
+                if UIDevice.current.orientation.isPortrait{
+                    InformazioniFilm(film: filmv, chiudi: $mostra)
+                    .frame(width: 270, height: 400)
+                      .cornerRadius(30)
+                }
+//
+                 
             }
             if mostrav == true{
+                if UIDevice.current.orientation.isLandscape{
+                    InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
+                        .frame(width: 400, height: 270)
+                        .cornerRadius(30)
+                }
+                if UIDevice.current.orientation.isPortrait{
                 InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
+                    .frame(width: 270, height: 400)
                     .cornerRadius(30)
+                }
             }
         }
     }

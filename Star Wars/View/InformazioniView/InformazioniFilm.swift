@@ -11,7 +11,7 @@ struct InformazioniFilm: View {
     var film :Film
     @Binding var chiudi : Bool
     var body: some View {
-        VStack{
+        HStack{
             ScrollView{
                 HStack{
                     Spacer()
@@ -42,7 +42,7 @@ struct InformazioniFilm: View {
                 Spacer()
             }
         }
-        .frame(width: 300, height: 500)
+//        .frame(width: 300, height: 500)
 //        .background(Color("bginfo"))
         .background(Color("bginfo"))
     }
