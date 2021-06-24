@@ -27,28 +27,49 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 if seleziona == false{
-                if selezionato == false{
-                    //                mostra la lista
-                    ListaGenerale(persone: $dati.persone).environmentObject(dati)
-                }else{
-                    //                mostra la griglia
-                    GrigliaGenerale(persone: $dati.persone).environmentObject(dati)
-                }
+                    if selezionato == false{
+                        //                mostra la lista
+                        ListaGenerale(persone: $dati.persone).environmentObject(dati)
+                    }else{
+                        //                mostra la griglia
+                        GrigliaGenerale(persone: $dati.persone).environmentObject(dati)
+                    }
                 }
                 //            bottone per lo switch..
-                
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Star Wars")
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                                        selezionato.toggle()
-                                    }, label: {
-                                        Image(systemName: selezionato ? "list.triangle" :"circle.grid.2x2.fill" )
-                                    })
+            .navigationBarItems(leading:
+                                    Menu {
+                                        Button(action: {
+                                            dati.persone.sort { p1,p2 in
+                                                p1.name < p2.name
+                                            }
+                                            
+                                        }, label: {
+                                            Text("Crescente ")
+                                        })
+                                        Button(action: {
+                                            dati.persone.sort { p1,p2 in
+                                                p1.name > p2.name
+                                            }
+                                        }, label: {
+                                            Text("Decrescente")
+                                        })
+                                        
+                                    } label: {
+                                        Text("Ordina")
+                                    }
+                                ,trailing: Button(action: {
+                                    selezionato.toggle()
+                                }, label: {
+                                    Image(systemName: selezionato ? "list.triangle" :"circle.grid.2x2.fill")
+                                })
+                                
+                                
             )
+            //            .navigationBarItems(leading:
         }
-        
         .onAppear(perform: {
             dati.RecuperoValori()
             self.seleziona = true
