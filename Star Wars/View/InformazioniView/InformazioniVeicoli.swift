@@ -64,7 +64,7 @@ struct InformazioniVeicoli: View {
 }
 
 struct InformazioniVeicoli_Previews: PreviewProvider {
-    static var v = Veicoli(nome: "sottomarino", modello: "e", produttore: "e", costo: "ee", lunghezza: 34, massimaVelocità: 345, equipaggio: 2, passeggeri: 2, capacità: 34, materialiConsumo: "werty", classeVeicolo: "ssss")
+    static var v = Veicoli(url:"",nome: "sottomarino", modello: "e", produttore: "e", costo: "ee", lunghezza: 34, massimaVelocità: 345, equipaggio: 2, passeggeri: 2, capacità: 34, materialiConsumo: "werty", classeVeicolo: "ssss")
     @State static var mostra = true
     static var previews: some View {
         InformazioniVeicoli(mostra: $mostra, veicolo: v)

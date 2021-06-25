@@ -12,17 +12,23 @@
 //- la lista dei veicoli che il personaggio ha pilotato (nome, modello, produttore, costo, lunghezza,
 //etc)
 //Chiedere se nella schermata di dettaglio è possibile implementare l'onclick ? 
-
+//CONTROLLARE lo stato della conessione anche quando l'app è in esecuzione  e in base a quello verificare se usare coredata... 
 
 import SwiftUI
 import Alamofire
 import SDWebImageSwiftUI
-
+import CoreData
 
 struct ContentView: View {
     @ObservedObject var dati = Gestione()
     @State var seleziona :Bool = false
     @State var selezionato : Bool = false
+//    Core data....
+    @Environment(\.managedObjectContext) var context
+//    Persone
+    @FetchRequest(entity: PersonaO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var pers :FetchedResults<PersonaO>
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -71,7 +77,14 @@ struct ContentView: View {
             //            .navigationBarItems(leading:
         }
         .onAppear(perform: {
-            dati.RecuperoValori()
+            if Connectivity.isConnectedToInternet == false{
+                print(" 🤖offline")
+                dati.LetturaPersona(pers: pers)
+            }else{
+                print("🤖 online")
+                dati.RecuperoValori(context: context, pers: pers)
+            }
+            
             self.seleziona = true
         })
         .alert(isPresented: $seleziona, content: {
@@ -85,6 +98,7 @@ struct ContentView: View {
             return Alert(title: Text("Seleziona la visualizzazione"), primaryButton: lista, secondaryButton: griglia)
         })
 //        alert  per la scelta...
+//        .alert(item: Binding<Identifiable?>, content: <#T##(Identifiable) -> Alert#>)
         
         
     }

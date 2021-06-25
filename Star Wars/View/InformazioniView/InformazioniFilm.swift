@@ -49,7 +49,7 @@ struct InformazioniFilm: View {
 }
 
 struct InformazioniFilm_Previews: PreviewProvider {
-    static var film = Film(titolo: "prova1", anno: "2021-05-21", messaggioApertura: "in una galassia lontana lontana...")
+    static var film = Film(url: "",titolo: "prova1", anno: "2021-05-21", messaggioApertura: "in una galassia lontana lontana...")
     @State static var chiudi = false
     static var previews: some View {
         InformazioniFilm(film: film,chiudi: $chiudi)

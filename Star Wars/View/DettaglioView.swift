@@ -13,8 +13,8 @@ struct DettaglioView: View {
     @EnvironmentObject var dati : Gestione
     @State var mostra : Bool = false
     @State var mostrav : Bool = false
-    @State var filmv : Film = Film(titolo: "", anno: "", messaggioApertura: "")
-    @State var veicolov : Veicoli = Veicoli(nome: "", modello: "", produttore: "", costo: "", lunghezza: 0, massimaVelocità: 0, equipaggio: 0, passeggeri: 0, capacità: 0, materialiConsumo: "", classeVeicolo: "")
+    @State var filmv : Film = Film(url: "", titolo: "", anno: "", messaggioApertura: "")
+    @State var veicolov : Veicoli = Veicoli(url: "", nome: "", modello: "", produttore: "", costo: "", lunghezza: 0, massimaVelocità: 0, equipaggio: 0, passeggeri: 0, capacità: 0, materialiConsumo: "", classeVeicolo: "")
     var body: some View {
         ZStack {
             ScrollView{
@@ -31,7 +31,7 @@ struct DettaglioView: View {
                             self.filmv = film
                             print(filmv)
                             withAnimation{
-                                self.mostra.toggle()
+                                self.mostra = true
                             }
                         }, label: {
                             
@@ -64,8 +64,8 @@ struct DettaglioView: View {
                     InformazioniFilm(film: filmv, chiudi: $mostra)
                         .frame(width: 400, height: 270)
                       .cornerRadius(30)
-                }
-                if UIDevice.current.orientation.isPortrait{
+                }else{
+//                if UIDevice.current.orientation.isPortrait{
                     InformazioniFilm(film: filmv, chiudi: $mostra)
                     .frame(width: 270, height: 400)
                       .cornerRadius(30)
@@ -78,8 +78,8 @@ struct DettaglioView: View {
                     InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
                         .frame(width: 400, height: 270)
                         .cornerRadius(30)
-                }
-                if UIDevice.current.orientation.isPortrait{
+                }else{
+//                if UIDevice.current.orientation.isPortrait{
                 InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
                     .frame(width: 270, height: 400)
                     .cornerRadius(30)

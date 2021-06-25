@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FilmO" representedClassName="FilmO" syncable="YES">
+        <attribute name="anno" optional="YES" attributeType="String"/>
+        <attribute name="messaggioAp" optional="YES" attributeType="String"/>
+        <attribute name="titolo" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PersonaO" representedClassName="PersonaO" syncable="YES">
+        <attribute name="altezza" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coloreCapelli" optional="YES" attributeType="String"/>
+        <attribute name="coloreOcchi" optional="YES" attributeType="String"/>
+        <attribute name="colorePelle" optional="YES" attributeType="String"/>
+        <attribute name="films" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="immagine" optional="YES" attributeType="String"/>
+        <attribute name="nascita" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sesso" optional="YES" attributeType="String"/>
+        <attribute name="veicoli" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+    </entity>
+    <entity name="VeicoliO" representedClassName="VeicoliO" syncable="YES">
+        <attribute name="capacita" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="classeVeic" optional="YES" attributeType="String"/>
+        <attribute name="costo" optional="YES" attributeType="String"/>
+        <attribute name="equipaggio" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lunghezza" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="matCons" optional="YES" attributeType="String"/>
+        <attribute name="maxVelo" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="modello" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="passeggeri" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="produttore" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="PersonaO" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="FilmO" positionX="-63" positionY="63" width="128" height="89"/>
+        <element name="VeicoliO" positionX="-54" positionY="72" width="128" height="209"/>
+    </elements>
+</model>

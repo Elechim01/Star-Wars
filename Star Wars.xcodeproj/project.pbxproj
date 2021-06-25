@@ -17,11 +17,16 @@
 		C415CAB226828FC000EDA63F /* Star_WarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415CAB126828FC000EDA63F /* Star_WarsTests.swift */; };
 		C415CABD26828FC000EDA63F /* Star_WarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415CABC26828FC000EDA63F /* Star_WarsUITests.swift */; };
 		C415CACC268290AC00EDA63F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C415CACB268290AC00EDA63F /* Model.swift */; };
+		C444F08A2686815F00DBE690 /* PersonaOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C444F0892686815F00DBE690 /* PersonaOffline.swift */; };
+		C444F08E268691CA00DBE690 /* FilmOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C444F08D268691CA00DBE690 /* FilmOffline.swift */; };
+		C444F090268694C300DBE690 /* VeicoloOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C444F08F268694C300DBE690 /* VeicoloOffline.swift */; };
 		C4A213A1268355F20020A207 /* ListaGenerale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A0268355F20020A207 /* ListaGenerale.swift */; };
 		C4A213A32683574C0020A207 /* GrigliaGenerale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A22683574C0020A207 /* GrigliaGenerale.swift */; };
 		C4A213A52683E4E40020A207 /* DettaglioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A213A42683E4E40020A207 /* DettaglioView.swift */; };
 		C4B02C6626851EF100D70DF7 /* InformazioniFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C6526851EF100D70DF7 /* InformazioniFilm.swift */; };
 		C4B02C682685287700D70DF7 /* InformazioniVeicoli.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C672685287700D70DF7 /* InformazioniVeicoli.swift */; };
+		C4B02C6B268677C200D70DF7 /* DatiOffline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C69268677C200D70DF7 /* DatiOffline.xcdatamodeld */; };
+		C4B02C6D268677DB00D70DF7 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B02C6C268677DB00D70DF7 /* Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +67,16 @@
 		C415CABC26828FC000EDA63F /* Star_WarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_WarsUITests.swift; sourceTree = "<group>"; };
 		C415CABE26828FC000EDA63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C415CACB268290AC00EDA63F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C444F0892686815F00DBE690 /* PersonaOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaOffline.swift; sourceTree = "<group>"; };
+		C444F08D268691CA00DBE690 /* FilmOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmOffline.swift; sourceTree = "<group>"; };
+		C444F08F268694C300DBE690 /* VeicoloOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeicoloOffline.swift; sourceTree = "<group>"; };
 		C4A213A0268355F20020A207 /* ListaGenerale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaGenerale.swift; sourceTree = "<group>"; };
 		C4A213A22683574C0020A207 /* GrigliaGenerale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrigliaGenerale.swift; sourceTree = "<group>"; };
 		C4A213A42683E4E40020A207 /* DettaglioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettaglioView.swift; sourceTree = "<group>"; };
 		C4B02C6526851EF100D70DF7 /* InformazioniFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformazioniFilm.swift; sourceTree = "<group>"; };
 		C4B02C672685287700D70DF7 /* InformazioniVeicoli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformazioniVeicoli.swift; sourceTree = "<group>"; };
+		C4B02C6A268677C200D70DF7 /* DatiOffline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatiOffline.xcdatamodel; sourceTree = "<group>"; };
+		C4B02C6C268677DB00D70DF7 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DBE2CB2CE15F82327FD2AE82 /* Pods-Star Wars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Wars.release.xcconfig"; path = "Target Support Files/Pods-Star Wars/Pods-Star Wars.release.xcconfig"; sourceTree = "<group>"; };
 		EC174B3808F791879A39DDCF /* Pods-Star Wars-Star WarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Wars-Star WarsUITests.release.xcconfig"; path = "Target Support Files/Pods-Star Wars-Star WarsUITests/Pods-Star Wars-Star WarsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,9 +197,22 @@
 		C415CACA2682908F00EDA63F /* Modelli */ = {
 			isa = PBXGroup;
 			children = (
+				C444F0882686812300DBE690 /* ModelCoreData */,
 				C415CACB268290AC00EDA63F /* Model.swift */,
+				C4B02C6C268677DB00D70DF7 /* Persistence.swift */,
 			);
 			path = Modelli;
+			sourceTree = "<group>";
+		};
+		C444F0882686812300DBE690 /* ModelCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C4B02C69268677C200D70DF7 /* DatiOffline.xcdatamodeld */,
+				C444F0892686815F00DBE690 /* PersonaOffline.swift */,
+				C444F08D268691CA00DBE690 /* FilmOffline.swift */,
+				C444F08F268694C300DBE690 /* VeicoloOffline.swift */,
+			);
+			path = ModelCoreData;
 			sourceTree = "<group>";
 		};
 		C4A2139F268355840020A207 /* View */ = {
@@ -449,14 +472,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C444F08A2686815F00DBE690 /* PersonaOffline.swift in Sources */,
 				C4B02C6626851EF100D70DF7 /* InformazioniFilm.swift in Sources */,
 				C415CACC268290AC00EDA63F /* Model.swift in Sources */,
 				C415CAA226828FBF00EDA63F /* ContentView.swift in Sources */,
 				C4A213A1268355F20020A207 /* ListaGenerale.swift in Sources */,
 				C4B02C682685287700D70DF7 /* InformazioniVeicoli.swift in Sources */,
+				C4B02C6B268677C200D70DF7 /* DatiOffline.xcdatamodeld in Sources */,
+				C444F08E268691CA00DBE690 /* FilmOffline.swift in Sources */,
+				C444F090268694C300DBE690 /* VeicoloOffline.swift in Sources */,
 				C4A213A32683574C0020A207 /* GrigliaGenerale.swift in Sources */,
 				C4A213A52683E4E40020A207 /* DettaglioView.swift in Sources */,
 				C415CAA026828FBF00EDA63F /* Star_WarsApp.swift in Sources */,
+				C4B02C6D268677DB00D70DF7 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +810,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C4B02C69268677C200D70DF7 /* DatiOffline.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4B02C6A268677C200D70DF7 /* DatiOffline.xcdatamodel */,
+			);
+			currentVersion = C4B02C6A268677C200D70DF7 /* DatiOffline.xcdatamodel */;
+			path = DatiOffline.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C415CA9426828FBF00EDA63F /* Project object */;
 }
