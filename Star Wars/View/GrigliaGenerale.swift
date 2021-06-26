@@ -15,6 +15,11 @@ struct GrigliaGenerale: View {
     ]
     @Binding var persone : [Persona]
     @EnvironmentObject var dati : Gestione
+//    gestione coredata
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(entity: FilmO.entity(), sortDescriptors: [NSSortDescriptor(key: "titolo", ascending: true)]) var filmcoredata : FetchedResults<FilmO>
+    @FetchRequest(entity: VeicoloO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var veicolocoredata : FetchedResults<VeicoloO>
+    
     var body: some View {
         VStack{
             Spacer()
@@ -24,7 +29,7 @@ struct GrigliaGenerale: View {
                         NavigationLink(
                             destination: DettaglioView(persona: persona).environmentObject(dati)
                                 .onAppear{
-                                    dati.GetOther(persona: persona)
+                                    dati.GetOther(persona: persona,veic:veicolocoredata , fil: filmcoredata,context:context)
                                 },
                             label: {
                                 VStack{

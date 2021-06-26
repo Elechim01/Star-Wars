@@ -77,7 +77,7 @@ struct ContentView: View {
             //            .navigationBarItems(leading:
         }
         .onAppear(perform: {
-            self.seleziona = true
+            
             if Connectivity.isConnectedToInternet == false{
                 print(" 🤖offline")
                 dati.LetturaPersona(pers: pers)
@@ -87,6 +87,7 @@ struct ContentView: View {
                     dati.RecuperoValori(context: context, pers: pers)
                 }
             }
+            self.seleziona = true
            
         
         })

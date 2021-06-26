@@ -118,46 +118,61 @@ class Gestione: ObservableObject{
     
     //        funzione che restituisce i veicoli
 
-    func getVeicoli(str: String) -> Veicoli {
+    func getVeicoli(str: String,context : NSManagedObjectContext, vei: FetchedResults<VeicoloO> ) -> Veicoli {
 //        se c'è una nave spaziale l'ultima lettera èo
         var navespaziale : Bool = false
         var indirizzo : String = ""
 //        controllare se è una nave spaziale :
         let index = str.index(str.endIndex, offsetBy: -1)
         let mySubstring = str.suffix(from: index)
-        if mySubstring == "o"{
+        if mySubstring == "O"{
             navespaziale = true
+            let cont = str.count
+            let start = str.index(str.startIndex,offsetBy: cont-1)
+            let mystring  = str[..<start]
+            indirizzo = String(mystring)
+        }
+        else{
+            indirizzo = str
         }
 //        recupero l'indirizzo :
-        let cont = str.count
-        let start = str.index(str.startIndex,offsetBy: cont-1)
-        let mystring  = str[..<start]
-        indirizzo = String(mystring)
-        
+        print("🤖",indirizzo)
         let url = URL(string: indirizzo)!
         if let datav = try? Data(contentsOf: url) {
                    // we're OK to parse!
             let json = try! JSON(data: datav)
-            print(json)
             let nome = json["name"].string!
             let modello = json["model"].string!
             let produttore = json["manufacturer"].string!
             let costo = json["cost_in_credits"].string!
-            let lunghezza = Double(json["length"].string!)!
-            let velocità = Int(json["max_atmosphering_speed"].string!)!
-            let equipaggio = Int(json["crew"].string!)!
-            let passegeri = Int(json["passengers"].string!)!
-            let capacità = Double(json["cargo_capacity"].string!)!
+            let lunghezza = Double(json["length"].string!) ?? 0
+            let velocità = Int(json["max_atmosphering_speed"].string!) ?? 0
+            let equipaggio = Int(json["crew"].string!) ?? 0
+            let passegeri = Int(json["passengers"].string!) ?? 0
+            let capacità = Double(json["cargo_capacity"].string!) ?? 0
             let consumo = json["consumables"].string!
-            let tipo = navespaziale ?  json["vehicle_class"].string! : json["starship_class"].string!
+            var tipo = ""
+            if navespaziale == true{
+                print(json["starship_class"])
+                tipo = json["starship_class"].string!
+            }else{
+                print(json["vehicle_class"])
+                tipo = json["vehicle_class"].string!
+            }
+//            let tipo = navespaziale ? json["starship_class"].string!: json["vehicle_class"].string!
             
-            return Veicoli(url: indirizzo,nome: nome, modello: modello, produttore: produttore, costo: costo, lunghezza: lunghezza, massimaVelocità: velocità, equipaggio: equipaggio, passeggeri: passegeri, capacità: capacità, materialiConsumo: consumo, classeVeicolo: tipo)
+            let veicolo = Veicoli(url: indirizzo,nome: nome, modello: modello, produttore: produttore, costo: costo, lunghezza: lunghezza, massimaVelocità: velocità, equipaggio: equipaggio, passeggeri: passegeri, capacità: capacità, materialiConsumo: consumo, classeVeicolo: tipo)
+//            Aggiugno CoreData
+            self.AggiungiVeicoli(context: context, veicolo: veicolo, veic: vei)
+            return veicolo
+            
         }
         
         return Veicoli(url : "",nome: "", modello: "", produttore: "", costo: "", lunghezza: 0, massimaVelocità: 0, equipaggio: 0, passeggeri: 0, capacità: 0.0, materialiConsumo: "", classeVeicolo: "")
     }
+    
 //    funzione che ottiene i film
-    func getFilm(indirizzo : String) -> Film {
+    func getFilm(indirizzo : String,context: NSManagedObjectContext,fil : FetchedResults<FilmO>) -> Film {
         let url = URL(string: indirizzo)!
         if let dataf = try? Data(contentsOf: url){
             let json = try! JSON(data: dataf)
@@ -165,24 +180,44 @@ class Gestione: ObservableObject{
             let titolo = json["title"].string!
             let anno = json["release_date"].string!
             let messaggio = json["opening_crawl"].string!
-            return Film(url: indirizzo,titolo: titolo, anno: anno, messaggioApertura: messaggio)
+            let film = Film(url: indirizzo,titolo: titolo, anno: anno, messaggioApertura: messaggio)
+//            inserisco i film dentro coredata
+            self.AggiungiFilm(context: context, film: film, fil: fil)
+            return film
             
         }
         return Film(url: "",titolo: "", anno: "", messaggioApertura: "")
     }
     
 //    qundo seleziono il personaggio scarico i valori di esso
-    func GetOther(persona : Persona) {
+    func GetOther(persona : Persona,veic: FetchedResults<VeicoloO>,fil : FetchedResults<FilmO>, context: NSManagedObjectContext) {
 //        pulire i filme e i veicoli
         self.film = []
         self.veicoli = []
 //        leggo i veicoli:
-        for f in persona.film{
-            self.film.append(getFilm(indirizzo: f))
+//        Controllare la connessione:
+        if Connectivity.isConnectedToInternet == false{
+//            offline leggo da coredata.....
+            for f in persona.film{
+                self.film.append(LetturaFilm(fil: fil, url: f))
+            }
+            for v in persona.veicoli {
+                self.veicoli.append(LetturaVeicoli(veic: veic, url: v))
+            }
+            print(veicoli)
+        }else{
+//            online leggo da internet...
+            for f in persona.film{
+                self.film.append(getFilm(indirizzo: f,context: context,fil: fil))
+            }
+            for v in persona.veicoli {
+                self.veicoli.append(getVeicoli(str: v,context: context,vei: veic))
+            }
         }
-        for v in persona.veicoli {
-            self.veicoli.append(getVeicoli(str: v))
-        }
+        
+        
+        
+       
         print(film)
         print(veicoli)
     }
@@ -219,21 +254,114 @@ class Gestione: ObservableObject{
                 print(error.localizedDescription)
             }
         }
-        
     }
+//    Scrittura Veicoli
+    func AggiungiVeicoli(context : NSManagedObjectContext, veicolo: Veicoli, veic: FetchedResults<VeicoloO>){
+        let veicolon = VeicoloO(context: context)
+//        controllare che la persona sia presente del databse:
+        var vuoto : Bool = true
+        for ve in veic {
+            if Veicoli(url: ve.url ?? "", nome: ve.nome ?? "", modello: ve.modello ?? "", produttore: ve.produttore ?? "", costo: ve.costo ?? "", lunghezza: ve.lunghezza, massimaVelocità: Int(ve.maxVelo), equipaggio: Int(ve.equipaggio), passeggeri: Int(ve.passeggeri), capacità: ve.capacita, materialiConsumo: ve.matCons ?? "", classeVeicolo: ve.classeVeic ?? "") == veicolo{
+                vuoto = false
+            }
+        }
+        if vuoto == true{
+            print("🤖",veicolo)
+            veicolon.url = veicolo.url
+            veicolon.nome = veicolo.nome
+            veicolon.modello = veicolo.modello
+            veicolon.produttore = veicolo.produttore
+            veicolon.costo = veicolo.costo
+            veicolon.lunghezza = veicolo.lunghezza
+            veicolon.maxVelo = Double(veicolo.massimaVelocità)
+            veicolon.equipaggio = Double(veicolo.equipaggio)
+            veicolon.passeggeri = Double(veicolo.passeggeri)
+            veicolon.capacita = veicolo.capacità
+            veicolon.matCons = veicolo.materialiConsumo
+            veicolon.classeVeic = veicolo.classeVeicolo
+            do {
+                try context.save()
+            } catch  {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    func AggiungiFilm(context: NSManagedObjectContext, film: Film, fil : FetchedResults<FilmO>){
+        let newf = FilmO(context: context)
+        var vuoto : Bool = true
+        for fi in fil {
+            if Film(url: fi.url ?? "", titolo: fi.titolo ?? "", anno: fi.anno ?? "", messaggioApertura: fi.messaggioAp ?? "") == film{
+                vuoto = false
+            }
+        }
+        if vuoto == true{
+            newf.url = film.url
+            newf.titolo = film.titolo
+            newf.anno  = film.anno
+            newf.messaggioAp = film.messaggioApertura
+            do {
+                try context.save()
+            } catch  {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
 //    Lettura delle persone :
     func LetturaPersona(pers : FetchedResults<PersonaO>){
         self.persone = []
+        print(pers)
         for per in pers{
             self.persone.append(Persona(name: per.nome ?? "", immagine: per.immagine ?? "", altezza: Int(per.altezza), peso: Int(per.peso), coloreCapelli: per.coloreCapelli ?? "", colorePelle: per.colorePelle ?? "", coloreOcchi: per.coloreOcchi ?? "", annoNascita: per.nascita ?? "", sesso: per.sesso ?? "", film: per.films ?? [], veicoli: per.veicoli ?? []))
         }
+        print(persone)
     }
-//    Rifare la lettrua e a scrittura per i film e i veicoli 
+//    Rifare la lettrua e a scrittura per i film e i veicoli
     
-    
-    
-    
-    
+    func LetturaVeicoli(veic: FetchedResults<VeicoloO>,url: String) -> Veicoli{
+        var veicoli: Veicoli = Veicoli(url: "", nome: "", modello: "", produttore: "", costo: "", lunghezza: 0, massimaVelocità: 0, equipaggio: 0, passeggeri: 0, capacità: 0, materialiConsumo: "", classeVeicolo: "")
+        
+        var navespaziale : Bool = false
+        var indirizzo : String = ""
+//        controllare se è una nave spaziale :
+        let index = url.index(url.endIndex, offsetBy: -1)
+        let mySubstring = url.suffix(from: index)
+        if mySubstring == "O"{
+            navespaziale = true
+            let cont = url.count
+            let start = url.index(url.startIndex,offsetBy: cont-1)
+            let mystring  = url[..<start]
+            indirizzo = String(mystring)
+        }
+        else{
+            indirizzo = url
+        }
+        
+        
+        for ve in veic{
+//            controllo che sia quello che cerco, prevedere il caso di navi spaziali, strigha che termina con la O, rimoverla:
+            
+            print(ve.url!)
+            if ve.url! == indirizzo{
+             veicoli = (Veicoli(url: ve.url ?? "", nome: ve.nome ?? "", modello: ve.modello ?? "", produttore: ve.produttore ?? "", costo: ve.costo ?? "", lunghezza: ve.lunghezza, massimaVelocità: Int(ve.maxVelo), equipaggio: Int(ve.equipaggio), passeggeri: Int(ve.passeggeri), capacità: ve.capacita, materialiConsumo: ve.matCons ?? "", classeVeicolo: ve.classeVeic ?? ""))
+                return veicoli
+            }
+        }
+        return veicoli
+    }
+    func LetturaFilm(fil : FetchedResults<FilmO>, url : String) -> Film{
+        var film = Film(url: "", titolo: "", anno: "", messaggioApertura: "")
+        
+         for fi in fil {
+//            controllo che sia quello che cerco
+            if fi.url! == url{
+                film = Film(url: fi.url ?? "", titolo: fi.titolo ?? "", anno: fi.anno ?? "", messaggioApertura: fi.messaggioAp ?? "")
+                return film
+            }
+        }
+        return film
+    }
     
     
 }

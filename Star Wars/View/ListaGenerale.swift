@@ -12,13 +12,16 @@ import SDWebImageSwiftUI
 struct ListaGenerale: View {
     @Binding var persone : [Persona]
     @EnvironmentObject var dati : Gestione
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(entity: FilmO.entity(), sortDescriptors: [NSSortDescriptor(key: "titolo", ascending: true)]) var filmcoredata : FetchedResults<FilmO>
+    @FetchRequest(entity: VeicoloO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var veicolocoredata : FetchedResults<VeicoloO>
     var body: some View {
         VStack {
             List(persone, id: \.id){ persona in
                 NavigationLink(
                     destination: DettaglioView(persona: persona).environmentObject(dati)
                         .onAppear{
-                            dati.GetOther(persona: persona)
+                            dati.GetOther(persona: persona,veic:veicolocoredata , fil: filmcoredata,context:context)
                         },
                     label: {
                         HStack{

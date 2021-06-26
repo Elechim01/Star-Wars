@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+
 @objc(VeicoloO)
 public class VeicoloO : NSManagedObject{
     
@@ -26,7 +27,7 @@ extension VeicoloO{
     @NSManaged public  var passeggeri : Double
     @NSManaged public  var capacita : Double
     @NSManaged public  var matCons : String?
-    @NSManaged public  var classeVeicolo : String?
+    @NSManaged public  var classeVeic : String?
 }
 extension VeicoloO: Identifiable{
     
