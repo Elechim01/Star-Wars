@@ -19,7 +19,7 @@ class Gestione: ObservableObject{
 //    @Published var alert
     func RecuperoValori(context: NSManagedObjectContext,pers : FetchedResults<PersonaO>){
         //        Dowload the JSON data
-        var indice = 1
+//        var indice = 1
         var urlImaggine = ""
         var elencoveicoli : [String] = []
         var elencoFilm : [String] = []
@@ -32,21 +32,29 @@ class Gestione: ObservableObject{
         var coloreOcchi = ""
         var sesso = ""
         self.persone = []
-        AF.request("https://swapi.dev/api/people").responseData { data in
-//            let url = URL(string: "https://swapi.dev/api/people")!
-//              if let data = try? Data(contentsOf: url) {
+        var indirizzo : String? = "https://swapi.dev/api/people"
+        var trovaid : String = ""
+        
+        while indirizzo != nil {
+            let url = URL(string: indirizzo!)!
+//        AF.request("https://swapi.dev/api/people").responseData { data in
+              if let data = try? Data(contentsOf: url) {
 //            Gestisco offline
-            if data.data != nil{
-                let json = try! JSON(data: data.data!)
+            print(data)
+//            if data.data != nil{
+                let json = try! JSON(data: data)
                 //            let arrayNames = json["results"].arrayValue.map{($0["name"].stringValue)}
+//                Carico l'indirizzo :
+                indirizzo = json["next"].string
+                print(indirizzo)
                 let arrayNames = json["results"].arrayValue
                 print(arrayNames)
                 for i in arrayNames{
                     //                print(i)
                     //                recupero valori
                     nome = i["name"].string!
-                    altezza = Int(i["height"].string!)!
-                    peso = Int(i["mass"].string!)!
+                    altezza = Int(i["height"].string!) ??  0
+                    peso = Int(i["mass"].string!) ?? 0
                     coloreCapelli = i["hair_color"].string!
                     colorePelle = i["skin_color"].string!
                     coloreOcchi = i["eye_color"].string!
@@ -61,6 +69,12 @@ class Gestione: ObservableObject{
                         //                    veicoli.append(self.getVeicoli(indirizzo: elementi.string!))
                         elencoveicoli.append(elementi.string!)
                     }
+//                    Aggiungo anche le navi spaziali
+                    let naveSpaziale = i["starships"].array!
+                    for nave in naveSpaziale{
+                        elencoveicoli.append(nave.string! + "O")
+                    }
+                    
                     let films = i["films"].array!
                     elencoFilm = []
                     for film in films {
@@ -68,32 +82,58 @@ class Gestione: ObservableObject{
                         //                    elencoFilm.append(self.getFilm(indirizzo: film.string!))
                         elencoFilm.append(film.string!)
                     }
-                    print(nome,altezza,peso,coloreCapelli,colorePelle,coloreOcchi, sesso)
-                    print("data",dataDinascita)
-                    print(elencoveicoli)
-                    print(elencoFilm)
-                    urlImaggine = "https://mobile.aws.skylabs.it/mobileassignments/swapi/" + String(indice)+".png"
+//                    print(nome,altezza,peso,coloreCapelli,colorePelle,coloreOcchi, sesso)
+//                    print("data",dataDinascita)
+//                    print(elencoveicoli)
+//                    print(elencoFilm)
+//                    per recuperare l'id il cont non funziona
+                    trovaid = i["url"].string!
+                    urlImaggine = "https://mobile.aws.skylabs.it/mobileassignments/swapi/" + TrovaId(url: trovaid)+".png"
+                    print("🤖",nome, indirizzo)
                     let p = Persona(name: nome, immagine: urlImaggine, altezza: altezza, peso: peso, coloreCapelli: coloreCapelli, colorePelle: colorePelle, coloreOcchi: coloreOcchi, annoNascita: dataDinascita, sesso: sesso, film: elencoFilm, veicoli: elencoveicoli)
                     self.persone.append(p)
 //                    Aggiungere il valore nel core data....
                     self.AggiungiPersona(context: context, persona: p, pers: pers)
                     
-                    indice += 1
+//                    indice += 1
                 }
                 print(self.persone)
                 
-            }
-            else{
+//            }
+//            else{
 //                leggiamo i valori da coredata.....
                 
-            }
+//            }
         }
-
+        }
 //        crah offline
         }
+    func TrovaId(url : String) -> String {
+        let start = url.index(url.startIndex,offsetBy: 29)
+        let end = url.index(url.endIndex,offsetBy: -1)
+        let range = start..<end
+        let mysubstring = url[range]
+        return String(mysubstring)
+    }
+    
     //        funzione che restituisce i veicoli
 
-    func getVeicoli(indirizzo: String) -> Veicoli {
+    func getVeicoli(str: String) -> Veicoli {
+//        se c'è una nave spaziale l'ultima lettera èo
+        var navespaziale : Bool = false
+        var indirizzo : String = ""
+//        controllare se è una nave spaziale :
+        let index = str.index(str.endIndex, offsetBy: -1)
+        let mySubstring = str.suffix(from: index)
+        if mySubstring == "o"{
+            navespaziale = true
+        }
+//        recupero l'indirizzo :
+        let cont = str.count
+        let start = str.index(str.startIndex,offsetBy: cont-1)
+        let mystring  = str[..<start]
+        indirizzo = String(mystring)
+        
         let url = URL(string: indirizzo)!
         if let datav = try? Data(contentsOf: url) {
                    // we're OK to parse!
@@ -109,7 +149,8 @@ class Gestione: ObservableObject{
             let passegeri = Int(json["passengers"].string!)!
             let capacità = Double(json["cargo_capacity"].string!)!
             let consumo = json["consumables"].string!
-            let tipo = json["vehicle_class"].string!
+            let tipo = navespaziale ?  json["vehicle_class"].string! : json["starship_class"].string!
+            
             return Veicoli(url: indirizzo,nome: nome, modello: modello, produttore: produttore, costo: costo, lunghezza: lunghezza, massimaVelocità: velocità, equipaggio: equipaggio, passeggeri: passegeri, capacità: capacità, materialiConsumo: consumo, classeVeicolo: tipo)
         }
         
@@ -140,7 +181,7 @@ class Gestione: ObservableObject{
             self.film.append(getFilm(indirizzo: f))
         }
         for v in persona.veicoli {
-            self.veicoli.append(getVeicoli(indirizzo: v))
+            self.veicoli.append(getVeicoli(str: v))
         }
         print(film)
         print(veicoli)
@@ -187,6 +228,10 @@ class Gestione: ObservableObject{
             self.persone.append(Persona(name: per.nome ?? "", immagine: per.immagine ?? "", altezza: Int(per.altezza), peso: Int(per.peso), coloreCapelli: per.coloreCapelli ?? "", colorePelle: per.colorePelle ?? "", coloreOcchi: per.coloreOcchi ?? "", annoNascita: per.nascita ?? "", sesso: per.sesso ?? "", film: per.films ?? [], veicoli: per.veicoli ?? []))
         }
     }
+//    Rifare la lettrua e a scrittura per i film e i veicoli 
+    
+    
+    
     
     
     

@@ -77,15 +77,18 @@ struct ContentView: View {
             //            .navigationBarItems(leading:
         }
         .onAppear(perform: {
+            self.seleziona = true
             if Connectivity.isConnectedToInternet == false{
                 print(" 🤖offline")
                 dati.LetturaPersona(pers: pers)
             }else{
                 print("🤖 online")
-                dati.RecuperoValori(context: context, pers: pers)
+                DispatchQueue.main.async {
+                    dati.RecuperoValori(context: context, pers: pers)
+                }
             }
-            
-            self.seleziona = true
+           
+        
         })
         .alert(isPresented: $seleziona, content: {
             
