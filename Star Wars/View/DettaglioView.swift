@@ -25,7 +25,7 @@ struct DettaglioView: View {
                     .fontWeight(.bold)
                     .padding(.top)
                 ScrollView{
-                    ForEach(dati.film, id: \.id){ film in
+                    ForEach(dati.FiltroFilm(persona: persona), id: \.id){ film in
                         
                         Button(action: {
                             self.filmv = film
@@ -44,7 +44,7 @@ struct DettaglioView: View {
                     Text("Veicoli")
                         .fontWeight(.bold)
                         .padding(.top)
-                    ForEach(dati.veicoli, id: \.id){ veicolo in
+                    ForEach(dati.FiltroVeicoli(persona: persona), id: \.id){ veicolo in
                         Button(action: {
                             self.veicolov = veicolo
                             withAnimation{
@@ -74,16 +74,16 @@ struct DettaglioView: View {
                  
             }
             if mostrav == true{
-                if UIDevice.current.orientation.isLandscape{
-                    InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
-                        .frame(width: 400, height: 270)
-                        .cornerRadius(30)
-                }else{
+//                if UIDevice.current.orientation.isLandscape{
+//                    InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
+//                        .frame(width: 400, height: 230)
+//                        .cornerRadius(30)
+//                }else{
 //                if UIDevice.current.orientation.isPortrait{
                 InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
-                    .frame(width: 270, height: 400)
+//                    .frame(width: 270, height: 400)
                     .cornerRadius(30)
-                }
+//                }
             }
         }
     }

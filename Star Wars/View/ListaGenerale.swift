@@ -20,10 +20,10 @@ struct ListaGenerale: View {
             List(persone, id: \.id){ persona in
                 NavigationLink(
                     destination: DettaglioView(persona: persona).environmentObject(dati)
-                        .onAppear{
-                            dati.GetOther(persona: persona,veic:veicolocoredata , fil: filmcoredata,context:context)
-                        },
-                    label: {
+//                        .onAppear{
+//                            dati.GetOther(persona: persona,veic:veicolocoredata , fil: filmcoredata,context:context)
+//                        },
+                    ,label: {
                         HStack{
                             AnimatedImage(url: URL(string: persona.immagine))
                                 .resizable()

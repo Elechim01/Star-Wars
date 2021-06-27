@@ -20,15 +20,18 @@ import SDWebImageSwiftUI
 import CoreData
 
 struct ContentView: View {
+    
     @ObservedObject var dati = Gestione()
     @State var seleziona :Bool = false
     @State var selezionato : Bool = false
-//    Core data....
+    //    valori 1 crescente  o 2 decrescente
+    @State var ordinamento : Int = 0
+    //    Core data....
     @Environment(\.managedObjectContext) var context
-//    Persone
+    //    Persone
     @FetchRequest(entity: PersonaO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var pers :FetchedResults<PersonaO>
-    
-    
+    @FetchRequest(entity: VeicoloO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var veicolocoredata : FetchedResults<VeicoloO>
+    @FetchRequest(entity: FilmO.entity(), sortDescriptors: [NSSortDescriptor(key: "titolo", ascending: true)]) var filmcoredata : FetchedResults<FilmO>
     var body: some View {
         NavigationView{
             VStack{
@@ -48,22 +51,39 @@ struct ContentView: View {
             .navigationBarItems(leading:
                                     Menu {
                                         Button(action: {
+                                            self.ordinamento = 1
                                             dati.persone.sort { p1,p2 in
                                                 p1.name < p2.name
                                             }
                                             
                                         }, label: {
-                                            Text("Crescente ")
+                                            HStack{
+                                                if ordinamento == 1{
+                                                    Image(systemName: "checkmark")
+                                                        .resizable()
+                                                        .foregroundColor(.blue)
+                                                }
+                                                Text("Crescente ")
+                                            }
                                         })
                                         Button(action: {
+                                            self.ordinamento = 2
                                             dati.persone.sort { p1,p2 in
                                                 p1.name > p2.name
                                             }
                                         }, label: {
-                                            Text("Decrescente")
+                                            HStack{
+                                                if ordinamento == 2{
+                                                    Image(systemName: "checkmark")
+                                                        .resizable()
+                                                        .foregroundColor(.blue)
+                                                }
+                                                Text("Decrescente")
+                                            }
                                         })
                                         
                                     } label: {
+                                        
                                         Text("Ordina")
                                     }
                                 ,trailing: Button(action: {
@@ -80,16 +100,36 @@ struct ContentView: View {
             
             if Connectivity.isConnectedToInternet == false{
                 print(" 🤖offline")
-                dati.LetturaPersona(pers: pers)
+                //                dati.LetturaPersona(pers: pers)
+                dati.Getoffline(pers: pers, veic: veicolocoredata, fil: filmcoredata)
+                
             }else{
                 print("🤖 online")
-                DispatchQueue.main.async {
-                    dati.RecuperoValori(context: context, pers: pers)
+                //                Leggo oflline
+                dati.Getoffline(pers: pers, veic: veicolocoredata, fil: filmcoredata)
+                //                inserire film e veicoli
+                //                dati.l
+                
+                if dati.persone.isEmpty == true{
+                    let dispatchQueue1 = DispatchQueue(label: "QueueIdentification1",qos: .background)
+                    dispatchQueue1.async {
+                        dati.RecuperoValori(context: context, pers: pers, vei: veicolocoredata, fil: filmcoredata, sincronizza: false)
+                        
+                    }
+                }else{
+                    //                    sincronizzare i valori in backgorund
+                    //                    DispatchQueue.global(qos: .background).async {
+                    let dispatchQueue = DispatchQueue(label: "QueueIdentification",qos: .background)
+                    dispatchQueue.async {
+                        dati.RecuperoValori(context: context, pers: pers, vei: veicolocoredata, fil: filmcoredata, sincronizza: true)
+                        
+                    }
+                    //                    }
                 }
             }
             self.seleziona = true
-           
-        
+            
+            
         })
         .alert(isPresented: $seleziona, content: {
             
@@ -101,8 +141,7 @@ struct ContentView: View {
             }
             return Alert(title: Text("Seleziona la visualizzazione"), primaryButton: lista, secondaryButton: griglia)
         })
-//        alert  per la scelta...
-//        .alert(item: Binding<Identifiable?>, content: <#T##(Identifiable) -> Alert#>)
+        //        alert  per la scelta...
         
         
     }
@@ -111,6 +150,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-           
+        
     }
 }
