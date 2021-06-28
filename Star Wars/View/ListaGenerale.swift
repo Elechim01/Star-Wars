@@ -13,9 +13,12 @@ struct ListaGenerale: View {
     @Binding var persone : [Persona]
     @EnvironmentObject var dati : Gestione
     @Environment(\.managedObjectContext) var context
+    @State var ordinamento : Int = 0
+    @State var selezionato : Bool = false
     @FetchRequest(entity: FilmO.entity(), sortDescriptors: [NSSortDescriptor(key: "titolo", ascending: true)]) var filmcoredata : FetchedResults<FilmO>
     @FetchRequest(entity: VeicoloO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var veicolocoredata : FetchedResults<VeicoloO>
     var body: some View {
+//        NavigationView{
         VStack {
             List(persone, id: \.id){ persona in
                 NavigationLink(
@@ -44,6 +47,55 @@ struct ListaGenerale: View {
                 
             }
         }
+//        .navigationBarTitleDisplayMode(.inline)
+//        .navigationTitle("Star Wars")
+//        .navigationBarItems(leading:
+//                                Menu {
+//                                    Button(action: {
+//                                        self.ordinamento = 1
+//                                        dati.persone.sort { p1,p2 in
+//                                            p1.name < p2.name
+//                                        }
+//
+//                                    }, label: {
+//                                        HStack{
+//                                            if ordinamento == 1{
+//                                                Image(systemName: "checkmark")
+//                                                    .resizable()
+//                                                    .foregroundColor(.blue)
+//                                            }
+//                                            Text("Crescente ")
+//                                        }
+//                                    })
+//                                    Button(action: {
+//                                        self.ordinamento = 2
+//                                        dati.persone.sort { p1,p2 in
+//                                            p1.name > p2.name
+//                                        }
+//                                    }, label: {
+//                                        HStack{
+//                                            if ordinamento == 2{
+//                                                Image(systemName: "checkmark")
+//                                                    .resizable()
+//                                                    .foregroundColor(.blue)
+//                                            }
+//                                            Text("Decrescente")
+//                                        }
+//                                    })
+//
+//                                } label: {
+//
+//                                    Text("Ordina")
+//                                }
+//                            ,trailing: Button(action: {
+//                                selezionato.toggle()
+//                            }, label: {
+//                                Image(systemName: selezionato ? "list.triangle" :"circle.grid.2x2.fill")
+//                            })
+//
+//
+//        )
+//        }
     }
 }
 

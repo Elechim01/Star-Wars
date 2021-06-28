@@ -74,17 +74,18 @@ struct DettaglioView: View {
                  
             }
             if mostrav == true{
-//                if UIDevice.current.orientation.isLandscape{
-//                    InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
-//                        .frame(width: 400, height: 230)
-//                        .cornerRadius(30)
-//                }else{
-//                if UIDevice.current.orientation.isPortrait{
+                if UIDevice.current.orientation.isLandscape{
+                    InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
+                        .frame(width: 400, height: 230)
+                        .cornerRadius(30)
+                }else{
+                if UIDevice.current.orientation.isPortrait{
                 InformazioniVeicoli(mostra: $mostrav, veicolo: veicolov)
-//                    .frame(width: 270, height: 400)
+                    .frame(width: 270, height: 400)
                     .cornerRadius(30)
-//                }
+                }
             }
+        }
         }
     }
 }

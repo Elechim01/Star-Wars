@@ -14,133 +14,10 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "ContentView"
-            landmarkType = "14">
-            <Locations>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - 4c30ae317505a3e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "property wrapper backing initializer of Star_Wars.ContentView.dati : Star_Wars.Gestione"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - af3aabb352cf76dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.dati.getter : Star_Wars.Gestione"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - 3d567ffb448c3e28"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.dati.setter : Star_Wars.Gestione"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - 2f7f059760d3b7c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.dati.modify : Star_Wars.Gestione"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "14">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - d5b3732d8c35028"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.dati.modify : Star_Wars.Gestione with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - 23f3596bf291fe04"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.$dati.getter : SwiftUI.ObservedObject&lt;Star_Wars.Gestione&gt;.Wrapper"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "98">
-               </Location>
-               <Location
-                  uuid = "7276B57E-D174-41AF-AB5E-5648B22B961E - b46b48a6d04522e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Star_Wars.ContentView.init() -&gt; Star_Wars.ContentView"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -153,8 +30,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,8 +46,8 @@
             filePath = "Star Wars/View/ListaGenerale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -185,8 +62,8 @@
             filePath = "Star Wars/View/ListaGenerale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -290,102 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65FC7C34-2AEB-492A-88E3-EB72CA57D4F3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "Gestione"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DB58AE9D-1600-427B-86B4-30755A649350"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "858F3AB5-472E-476C-A0AA-019019B2ED43"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4621C02C-0032-4638-BF60-73D20C4D6563"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3673AF42-CA96-4B18-97E1-609067740051"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "742806C7-2CB1-4EEE-912A-C62D53E73872"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "546042BE-05AF-471A-89BF-48ACB4B062A3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -393,26 +174,10 @@
             filePath = "Star Wars/View/GrigliaGenerale.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "GrigliaGenerale"
             landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "47025294-875A-4C47-952F-5950806D5DAE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -428,38 +193,6 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FDDE5FB1-6A54-4E62-905C-C41FCE0FCA61"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
-            landmarkName = "TrovaId(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F6E7E99C-3430-408C-8443-2EC517FC516D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "getVeicoli(str:context:vei:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -515,22 +248,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4262753-AD28-460D-8E97-3F26261D66E1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "CC557CB2-1633-40A8-8DC8-917887B1E69B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -579,54 +296,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CA390034-4100-40C8-BB30-AED50C1DBABE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "CA390034-4100-40C8-BB30-AED50C1DBABE - eb64e73c18ce70fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Star_Wars.ContentView.body.getter : some"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "2028">
-               </Location>
-               <Location
-                  uuid = "CA390034-4100-40C8-BB30-AED50C1DBABE - c37e5b8c1ee72e90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #2 () -&gt; () in Star_Wars.ContentView.body.getter : some"
-                  moduleName = "Star Wars"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelemanniello/Documents/Sviluppo/Swift/Star%20Wars/Star%20Wars/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "276">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "8368864F-1067-4CD5-BD0F-EDDB8CFC6E85"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -634,8 +303,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -650,8 +319,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,25 +335,9 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8DA0EFDD-67C3-4684-A99D-008B66441944"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "getVeicoli(str:context:vei:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -922,8 +575,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -938,8 +591,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,8 +607,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -970,8 +623,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
             <Locations>
@@ -1018,8 +671,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
             <Locations>
@@ -1059,38 +712,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5AC7BA69-B824-4C66-9C08-9E20048B45DB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8EA5798-EC8B-411A-B330-D31F1786D3DA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "497557F7-95E1-4E5C-9823-062EC3C75A2A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1114,8 +735,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1130,8 +751,8 @@
             filePath = "Star Wars/Modelli/Model.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "RecuperoValori(context:pers:vei:fil:sincronizza:)"
             landmarkType = "7">
             <Locations>
@@ -1219,22 +840,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C3B1E68-E434-494B-AC51-672F85F6866D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Star Wars/Modelli/Model.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "getVeicoli(str:context:vei:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C94F68E8-C9A6-4F15-AE2A-608427DB5039"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1262,6 +867,22 @@
             endingLineNumber = "77"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBD42E55-9C9A-4EE1-9B4E-B0036FDC3A66"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Star Wars/Modelli/Model.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "498"
+            endingLineNumber = "498"
+            landmarkName = "AggiungiFilm(context:film:fil:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

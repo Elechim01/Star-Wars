@@ -57,8 +57,8 @@ struct InformazioniVeicoli: View {
                 Spacer()
             }
         }
-        .frame(width: UIDevice.current.orientation.isLandscape ? 400: 270,
-               height:UIDevice.current.orientation.isLandscape ? 270 : 400)
+//        .frame(width: UIDevice.current.orientation.isLandscape ? 400: 270,
+//               height:UIDevice.current.orientation.isLandscape ? 270 : 400)
         //        .background(Color("bginfo"))
         .background(Color("bginfo"))
     }

@@ -25,9 +25,11 @@ struct ContentView: View {
     @State var seleziona :Bool = false
     @State var selezionato : Bool = false
     //    valori 1 crescente  o 2 decrescente
-    @State var ordinamento : Int = 0
+//    @State var ordinamento : Int = 0
     //    Core data....
     @Environment(\.managedObjectContext) var context
+    @State var ordinamento : Int = 0
+//    @State var selezionato : Bool = false
     //    Persone
     @FetchRequest(entity: PersonaO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var pers :FetchedResults<PersonaO>
     @FetchRequest(entity: VeicoloO.entity(), sortDescriptors: [NSSortDescriptor(key: "nome", ascending: true)]) var veicolocoredata : FetchedResults<VeicoloO>
@@ -55,7 +57,7 @@ struct ContentView: View {
                                             dati.persone.sort { p1,p2 in
                                                 p1.name < p2.name
                                             }
-                                            
+
                                         }, label: {
                                             HStack{
                                                 if ordinamento == 1{
@@ -81,9 +83,9 @@ struct ContentView: View {
                                                 Text("Decrescente")
                                             }
                                         })
-                                        
+
                                     } label: {
-                                        
+
                                         Text("Ordina")
                                     }
                                 ,trailing: Button(action: {
@@ -91,10 +93,9 @@ struct ContentView: View {
                                 }, label: {
                                     Image(systemName: selezionato ? "list.triangle" :"circle.grid.2x2.fill")
                                 })
-                                
-                                
+
+
             )
-            //            .navigationBarItems(leading:
         }
         .onAppear(perform: {
             
@@ -117,14 +118,15 @@ struct ContentView: View {
                         
                     }
                 }else{
+//                    setto l'oridinamento crescente
+                    self.ordinamento = 1
                     //                    sincronizzare i valori in backgorund
-                    //                    DispatchQueue.global(qos: .background).async {
+//                                        DispatchQueue.global(qos: .background).async {
                     let dispatchQueue = DispatchQueue(label: "QueueIdentification",qos: .background)
                     dispatchQueue.async {
                         dati.RecuperoValori(context: context, pers: pers, vei: veicolocoredata, fil: filmcoredata, sincronizza: true)
-                        
+
                     }
-                    //                    }
                 }
             }
             self.seleziona = true

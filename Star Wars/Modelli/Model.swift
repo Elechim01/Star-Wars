@@ -61,7 +61,7 @@ class Gestione: ObservableObject{
                 //            let arrayNames = json["results"].arrayValue.map{($0["name"].stringValue)}
                 //                Carico l'indirizzo :
                 indirizzo = json["next"].string
-                print(indirizzo)
+//                print(indirizzo!)
                 let arrayNames = json["results"].arrayValue
                 print(arrayNames)
                 for i in arrayNames{
@@ -96,7 +96,6 @@ class Gestione: ObservableObject{
                                 presente = true
                             }
                         }
-                        
                         if presente == false{
                             let v  = getVeicoli(str: elementi.string!,context: context,vei: vei)
                             if sincronizza == true{
@@ -241,6 +240,7 @@ class Gestione: ObservableObject{
                 print(self.persone)
             }
         }
+        print("🤖fine sincronizzazione")
     }
         //        crah offline
         
